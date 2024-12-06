@@ -51,7 +51,27 @@
 		<world_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
 	</static>
 
-	<include file="$(find cola2_stonefish)/scenarios/sparus2.scn">
-		<arg name="position" value="0.0 0.0 1.0"/>
+
+	<!-- General robots information -->
+	<arg name="robot_0" default="robot0"/>  <!--AUV0-->
+	<arg name="robot_1" default="robot1"/>  <!--AUV1-->
+	<arg name="robot_2" default="robot2"/>  <!--AUV2-->
+	<arg name="robot_3" default="robot3"/>  <!--AUV3-->
+	<arg name="robot_4" default="robot4"/>  <!--ASV1-->
+
+	<include file="$(find cola2_stonefish)/scenarios/robot0.scn">
+		<arg name="position" value="0.0 0.0 0.0"/>
+	</include>
+
+	<include file="$(find cola2_stonefish)/scenarios/robot1.scn">
+		<arg name="position" value="2.0 0.0 0.0"/>
+	</include>
+
+	<include file="$(find cola2_stonefish)/scenarios/robot2.scn">
+		<arg name="position" value="0.0 2.0 0.0"/>
+	</include>
+
+	<include file="$(find cola2_stonefish)/scenarios/robot3.scn">
+		<arg name="position" value="2.0 2.0 0.0"/>
 	</include>
 </scenario>

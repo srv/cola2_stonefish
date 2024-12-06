@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <scenario>
-	<robot name="turbot" fixed="false" self_collisions="false">
+	<robot name="robot2" fixed="false" self_collisions="false">
 		<base_link name="Vehicle" type="compound" physics="submerged">
 			<external_part name="Hull" type="model" physics="submerged" buoyant="false">
 				<physical>
@@ -113,14 +113,14 @@
 		<sensor name="dynamics" type="odometry" rate="30.0">
 			<link name="Vehicle"/>
 			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-			<ros_publisher topic="/turbot/dynamics/odometry"/>
+			<ros_publisher topic="/robot2/dynamics/odometry"/>
 		</sensor>
 
 		<sensor name="pressure" type="pressure" rate="5.0">
 			<link name="Vehicle"/>
 			<origin rpy="0.0 0.0 0.0" xyz="0.387 0.0 -0.033"/>
 			<noise pressure="100.0"/>
-			<ros_publisher topic="/turbot/navigator/pressure"/>
+			<ros_publisher topic="/robot2/navigator/pressure"/>
 		</sensor>
 
 		<sensor name="dvl" type="dvl" rate="5.0">
@@ -129,21 +129,21 @@
 			<specs beam_angle="30.0"/>
 			<range velocity="9.0 9.0 9.0" altitude_min="0.5" altitude_max="81.0"/>
 			<noise velocity="0.0015" altitude="0.001"/>
-			<ros_publisher topic="/turbot/navigator/dvl_sim" altitude_topic="/turbot/navigator/altitude"/>
+			<ros_publisher topic="/robot2/navigator/dvl_sim" altitude_topic="/robot2/navigator/altitude"/>
 		</sensor>
 
 		<sensor name="imu_filter" type="imu" rate="20.0">
 			<link name="Vehicle"/>
 			<origin rpy="0.0 0.0 0.0" xyz="0.36377 -0.02093 -0.0849"/>
 			<noise angle="0.000001745" angular_velocity="0.00001745"/>
-			<ros_publisher topic="/turbot/navigator/imu"/>
+			<ros_publisher topic="/robot2/navigator/imu"/>
 		</sensor>
 
 		<sensor name="gps" type="gps" rate="1.0">
 			<link name="Vehicle"/>
 			<origin rpy="0.0 0.0 0.0" xyz="-0.39 0.0 -0.36"/>
 			<noise ned_position="0.5"/>
-			<ros_publisher topic="/turbot/navigator/gps"/>
+			<ros_publisher topic="/robot2/navigator/gps"/>
 		</sensor>
 
 		<actuator name="ThrusterHeave" type="propeller">
@@ -181,7 +181,7 @@
 		
 		<world_transform rpy="0.0 0.0 0.0" xyz="$(arg position)"/>
 
-		<ros_subscriber thrusters="/sparus2/controller/thruster_setpoints_sim"/> 
-		<ros_publisher thrusters="/sparus2/controller/thruster_state"/>
+		<ros_subscriber thrusters="/robot2/controller/thruster_setpoints_sim"/> 
+		<ros_publisher thrusters="/robot2/controller/thruster_state"/>
 	</robot>
 </scenario>
