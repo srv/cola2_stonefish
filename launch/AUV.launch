@@ -81,17 +81,8 @@
         </include>
     </group>
 
-    <!-- Run Simulator -->
-    <include file="$(find stonefish_ros)/launch/simulator.launch">
-        <arg name="simulation_data" value="$(find cola2_stonefish)/data"/>
-        <arg name="scenario_description" value="$(find cola2_stonefish)/scenarios/sparus2_tank.scn"/>
-        <arg name="simulation_rate" value="300.0"/>
-        <arg name="graphics_resolution" value="1200 800"/>
-        <arg name="graphics_quality" value="high"/>
-    </include>
-
     <!-- Stonefish/COLA2 message translator -->
-    <node name="translator" pkg="cola2_stonefish" type="cola2_stonefish_node">
+    <node name="$(arg robot_name)_translator" pkg="cola2_stonefish" type="cola2_stonefish_node">
         <remap from="/translator/stonefish_dvl" to="/$(arg robot_name)/navigator/dvl_sim"/>
         <remap from="/translator/cola2_dvl" to="/$(arg robot_name)/navigator/dvl"/>
         <remap from="/translator/stonefish_thruster_setpoints" to="/$(arg robot_name)/controller/thruster_setpoints_sim"/>
@@ -99,7 +90,7 @@
     </node>
 
     <!-- RViz -->
-    <node name="world2ned" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 3.1415 world world_ned 100"/>
+    <!-- <node name="world2ned" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 3.1415 world world_ned 100"/> -->
     <group if="$(arg enable_rviz)">
         <node pkg="rviz" type="rviz" name="rviz" args="-d $(find cola2_turbot)/scene/sparus2.rviz"/>
     </group>
