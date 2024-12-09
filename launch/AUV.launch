@@ -82,12 +82,16 @@
     </group>
 
     <!-- Stonefish/COLA2 message translator -->
-    <node name="$(arg robot_name)_translator" pkg="cola2_stonefish" type="cola2_stonefish_node">
-        <remap from="/translator/stonefish_dvl" to="/$(arg robot_name)/navigator/dvl_sim"/>
-        <remap from="/translator/cola2_dvl" to="/$(arg robot_name)/navigator/dvl"/>
-        <remap from="/translator/stonefish_thruster_setpoints" to="/$(arg robot_name)/controller/thruster_setpoints_sim"/>
-        <remap from="/translator/cola2_thruster_setpoints" to="/$(arg robot_name)/controller/thruster_setpoints"/>
-    </node>
+    <group ns="/$(arg robot_name)">
+        <node name="translator" pkg="cola2_stonefish" type="cola2_stonefish_node">
+            <remap from="/$(arg robot_name)/translator/stonefish_dvl" to="/$(arg robot_name)/navigator/dvl_sim"/><!--subscriber-->
+            <remap from="/$(arg robot_name)/translator/cola2_dvl" to="/$(arg robot_name)/navigator/dvl"/><!--publisher-->
+            <remap from="/$(arg robot_name)/translator/stonefish_thruster_setpoints" to="/$(arg robot_name)/controller/thruster_setpoints_sim"/> <!--subscriber-->
+            <remap from="/$(arg robot_name)/translator/cola2_thruster_setpoints" to="/$(arg robot_name)/controller/thruster_setpoints"/><!--publisher-->
+            <!-- <remap from="/$(arg robot_name)/translator/stonefish_navigation" to="/$(arg robot_name)/ins_navigation"/> -->
+        </node>
+    </group>
+    
 
     <!-- RViz -->
     <!-- <node name="world2ned" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 3.1415 world world_ned 100"/> -->
