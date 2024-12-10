@@ -23,9 +23,6 @@
 			<friction material1="Neutral" material2="Aluminium" static="0.5" dynamic="0.2"/>
 			<friction material1="Neutral" material2="Polyamid" static="0.2" dynamic="0.05"/>
 			<friction material1="Rock" material2="Rock" static="0.9" dynamic="0.7"/>
-			<friction material1="Rock" material2="Fiberglass" static="0.6" dynamic="0.4"/>
-			<friction material1="Rock" material2="Aluminium" static="0.6" dynamic="0.3"/>
-			<friction material1="Rock" material2="Polyamid" static="0.4" dynamic="0.2"/>
 			<friction material1="Fiberglass" material2="Fiberglass" static="0.5" dynamic="0.2"/>
 			<friction material1="Fiberglass" material2="Aluminium" static="0.5" dynamic="0.2"/>
 			<friction material1="Fiberglass" material2="Polyamid" static="0.1" dynamic="0.05"/>
@@ -41,19 +38,18 @@
 		<look name="hull" gray="1.0" roughness="0.3" texture="sparus2/hull_tex.png"/>
 		<look name="tank" rgb="0.9 0.9 0.9" roughness="0.9"/>
 		<look name="grey" gray="0.5" roughness="0.5" metalness="0.8"/>
-		<look name="mosaic_invhali" gray="0.05" roughness="0.2" texture="terrain/mosaic_invhali_dense_port_2021.jpg"/>
+		<look name="mosaic_invhali" gray="0.05" roughness="0.2" texture="terrain/mosaic_invhali.jpg"/>
+		<look name="mosaic_1" gray="0.05" roughness="0.2" texture="terrain/cabrera_s0_mosaic(2)_març_2023.png"/>
+		<look name="mosaic_2" gray="0.05" roughness="0.2" texture="terrain/cabrera_s0_mosaic_març_2023.png"/>
 	</looks>
 
-	<static name="mosaic_invhali" type="model">
-		<physical> 
-			<mesh filename="terrain/mosaic_invhali.obj" scale="1.0"/>
-			<origin rpy="0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-		</physical>
-		<material name="Rock"/>
-		<look name="mosaic_invhali"/>
-		<world_transform rpy="0 0.0 0.0" xyz="0 0 20"/>
-	</static> 
-
+	<static name="mosaic_1" type="terrain"> 
+        <material name="Rock"/>
+        <look name="mosaic_1"/>
+        <height_map filename="terrain/cabrera_s0_mosaic(2)_març_2023.png"/>
+        <dimensions scalex="0.02" scaley="0.02" height="0"/>
+        <world_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 7"/>
+    </static>
 
 	<include file="$(find cola2_stonefish)/scenarios/robotn.scn">
 		<arg name="position" value="0.0 0.0 0.0"/>
