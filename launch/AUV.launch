@@ -88,13 +88,11 @@
             <remap from="/$(arg robot_name)/translator/cola2_dvl" to="/$(arg robot_name)/navigator/dvl"/><!--publisher-->
             <remap from="/$(arg robot_name)/translator/stonefish_thruster_setpoints" to="/$(arg robot_name)/controller/thruster_setpoints_sim"/> <!--subscriber-->
             <remap from="/$(arg robot_name)/translator/cola2_thruster_setpoints" to="/$(arg robot_name)/controller/thruster_setpoints"/><!--publisher-->
-            <!-- <remap from="/$(arg robot_name)/translator/stonefish_navigation" to="/$(arg robot_name)/ins_navigation"/> -->
         </node>
     </group>
     
 
     <!-- RViz -->
-    <!-- <node name="world2ned" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 3.1415 world world_ned 100"/> -->
     <group if="$(arg enable_rviz)">
         <node pkg="rviz" type="rviz" name="rviz" args="-d $(find cola2_turbot)/scene/sparus2.rviz"/>
     </group>

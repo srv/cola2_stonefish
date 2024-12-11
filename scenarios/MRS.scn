@@ -41,16 +41,22 @@
 		<look name="tank" rgb="0.9 0.9 0.9" roughness="0.9"/>
 		<look name="grey" gray="0.5" roughness="0.5" metalness="0.8"/>
 		<look name="mosaic_invhali" gray="0.05" roughness="0.2" texture="terrain/mosaic_invhali.jpg"/>
-		<look name="mosaic_1" gray="0.05" roughness="0.2" texture="terrain/mosaic.png"/>
-		<look name="mosaic_2" gray="0.05" roughness="0.2" texture="terrain/cabrera_s0_mosaic_març_2023.png"/>
+		<look name="mosaic_1" gray="0.05" roughness="0.2" texture="terrain/mosaic_compressed.png"/>
+		<look name="mosaic_2" gray="0.05" roughness="0.2" texture="terrain/mosaic_cabrera.png"/>
 	</looks>
 
-	<static name="mosaic_1" type="terrain"> 
+	<static name="Floor" type="plane">
+		<material name="Rock"/>
+		<look name="grey"/>
+		<world_transform xyz="0.0 0.0 30" rpy="0.0 0.0 0.0"/>
+	</static>
+
+	<static name="mosaic" type="terrain"> 
         <material name="Rock"/>
-        <look name="mosaic_1"/>
-        <height_map filename="terrain/mosaic.png"/>
-        <dimensions scalex="0.02" scaley="0.02" height="0"/>
-        <world_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 7"/>
+        <look name="mosaic_2"/>
+        <height_map filename="terrain/mosaic_cabrera.png"/>
+        <dimensions scalex="0.015" scaley="0.015" height="0"/>
+        <world_transform rpy="0.0 0.0 0.0" xyz="-100 -70 8"/>
     </static>
 
 	<include file="$(find cola2_stonefish)/scenarios/robotn.scn">
