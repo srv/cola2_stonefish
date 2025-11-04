@@ -8,6 +8,7 @@
     <arg name="enable_rviz" default="true"/>
     <arg name="robot_xacro" default="$(find sparus2_description)/urdf/payload.urdf.xacro"/>
 
+
     <!-- Namespace with robot name -->
     <group ns="$(arg robot_name)">
         <!-- Load configs (do not modify) -->
