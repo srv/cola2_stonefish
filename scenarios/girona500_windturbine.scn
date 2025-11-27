@@ -39,19 +39,36 @@
 		<look name="tank" rgb="0.9 0.9 0.9" roughness="0.9"/>
 		<look name="propeller" gray="1.0" roughness="0.3" texture="girona500/propeller_tex.png"/>
 		<look name="duct" gray="0.1" roughness="0.4" metalness="0.5"/>
+        <look name="rusty_paint" gray="0.05" roughness="0.5" texture="girona500/rusty_paint.jpg"/>
 	</looks>
 
-	<static name="Tank" type="model">
-		<physical>
-			<mesh filename="cirs_tank.obj" scale="1.0"/>
-			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-		</physical>
-		<material name="Rock"/>
-		<look name="tank"/>
-		<world_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-	</static>
+    <!-- <static name="windturbine1" type="cylinder">
+        <dimensions radius="5" height="20"/>
+        <material name="Steel"/>
+        <look name="rusty_paint"/>
+        <world_transform xyz="2.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    </static>
+	<static name="windturbine2" type="cylinder">
+        <dimensions radius="5" height="20"/>
+        <material name="Steel"/>
+        <look name="rusty_paint"/>
+        <world_transform xyz="2.0 0.0 20.0" rpy="0.0 0.0 0.0"/>
+    </static> -->
+
+	<static name="windturbine1" type="box">
+        <dimensions xyz="5.0 0.1 5.0"/>
+        <material name="Steel"/>
+        <look name="rusty_paint"/>
+        <world_transform xyz="4.0 0.0 0.0" rpy="0.0 0.0 1.57"/>
+    </static>
+	<static name="windturbine2" type="box">
+        <dimensions xyz="5.0 0.1 5.0"/>
+        <material name="Steel"/>
+        <look name="rusty_paint"/>
+        <world_transform xyz="4.0 0.0 5.0" rpy="0.0 0.0 1.57"/>
+    </static>
 
 	<include file="$(find cola2_stonefish)/scenarios/girona500.scn">
-		<arg name="position" value="0.0 0.0 1.0"/>
+		<arg name="position" value="0.0 0.0 0.0"/>
 	</include>
 </scenario>

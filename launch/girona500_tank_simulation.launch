@@ -4,8 +4,8 @@
     <arg name="enable_keyboard" default="true"/>
     <arg name="enable_joystick" default="false"/>
     <arg name="joystick_device" default="/dev/input/js0"/>
-    <arg name="enable_gui" default="true"/>
-    <arg name="enable_rviz" default="true"/>
+    <arg name="enable_gui" default="false"/>
+    <arg name="enable_rviz" default="false"/>
     <arg name="robot_xacro" default="$(find girona500_description)/urdf/payload.urdf.xacro"/>
 
     <!-- Namespace with robot name -->
@@ -40,7 +40,7 @@
         </node>
         <node name="controller" pkg="cola2_control" type="controller_node"/>
         <node name="pilot" pkg="cola2_control" type="pilot_node" output="screen"/>
-        <node name="teleoperation" pkg="cola2_control" type="teleoperation_node.py" output="screen"/>
+        <node name="teleoperation" pkg="cola2_control" type="teleoperation_node" output="screen"/>
         <node name="test_thrusters" pkg="cola2_control" type="test_thrusters.py" output="screen"/>
 
         <!-- Log -->
