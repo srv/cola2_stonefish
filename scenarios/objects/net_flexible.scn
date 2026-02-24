@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<scenario>
+    <looks>
+		<look name="black" gray="0.01" roughness="0.3" metalness="0.2" />
+    </looks>
+
+    <!-- tripod -->
+    <!-- <robot name="$(arg robot_name)" fixed="false" self_collisions="false"> -->
+    <!-- Mechanical structure of the robot -->
+    <!-- <base_link name="Vehicle" type="compound" physics="submerged"> -->
+
+    <robot name="(arg name)" fixed="true" self_collisions="false">
+
+        <base_link name="Origin" type="box" physics="submerged">
+            <dimensions xyz="0.1 0.1 0.1"/>
+            <origin rpy="0.0 0.0 0.0" xyz="-1.0 -1.0 0.0"/>
+            <material name="Rock"/>
+            <look name="Gray"/>
+        </base_link>
+
+        <link name="Base" type="compound" physics="submerged" buoyant="true">
+            <external_part name="net" type="model" physics="submerged" buoyant="true">
+                <visual>
+                    <mesh filename="$(find tandem_stonefish)/resources/objects/net/net_fishfarm_holes.obj" scale="0.5"/>
+                    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+                </visual>
+                <physical>
+                    <mesh filename="$(find tandem_stonefish)/resources/objects/net/net_fishfarm_holes.obj" scale="0.5"/>
+                    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+                </physical>
+                <look name="black"/>
+                <material name="Rock"/>
+                <compound_transform xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            </external_part>
+            <mass value="0.02"/>
+        </link>
+
+        <joint name="base2orig" type="revolute">
+            <parent name="Origin"/>
+            <child name="Base"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+			<axis xyz="1.0 0.0 0.0"/>
+        </joint>
+
+        <world_transform xyz="$(arg xyz)" rpy="$(arg rpy)"/>
+    </robot>
+
+</scenario>

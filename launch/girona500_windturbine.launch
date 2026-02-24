@@ -15,6 +15,10 @@
         <arg name="robot_name" value="$(arg robot_name)"/>
         <arg name="robot_xacro" value="$(arg robot_xacro)"/>
         </include>
+        
+        <!-- This is to match with UJI location -->
+        <param name="navigator/ned_latitude" value="39.9944"/>
+        <param name="navigator/ned_longitude" value="-0.0741"/>
 
         <!-- Load core -->
         <include file="$(find cola2_girona500)/launch/sim_core.launch">
@@ -55,7 +59,8 @@
     <!-- Run Simulator -->
 	<include file="$(find stonefish_ros)/launch/simulator.launch">
         <arg name="simulation_data" value="$(find cola2_stonefish)/data"/>
-        <arg name="scenario_description" value="$(find cola2_stonefish)/scenarios/girona500_windturbine.scn"/>
+        <!-- <arg name="scenario_description" value="$(find cola2_stonefish)/scenarios/girona500_windturbine.scn"/> -->
+        <arg name="scenario_description" value="$(find cola2_stonefish)/scenarios/girona500_uji_simulation.scn"/>
         <arg name="simulation_rate" value="300.0"/>
         <arg name="graphics_resolution" value="1000 600"/>
         <arg name="graphics_quality" value="high"/>
