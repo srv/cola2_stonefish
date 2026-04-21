@@ -56,4 +56,11 @@
 		<arg name="start_position" value="2.44 -1.37 0.5" />
 	</include>
 
+	<!-- <include file="$(find cola2_stonefish)/scenarios/objects/sphere.scn">
+		<arg name="xyz" value="2.55 -3.6 2.47" />
+		<arg name="rpy" value="0.0 0.0 0.0" />
+	</include> -->
+
+	<!-- This helps me to get the World NED coordinates of the hole -->
+
 </scenario>

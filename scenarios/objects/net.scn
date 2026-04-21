@@ -39,5 +39,15 @@
 		<look name="black" />
 		<world_transform xyz="$(arg xyz)" rpy="$(arg rpy)"/>
 	</static> -->
+
+	<!-- <static name="Hole_GT" type="model">
+		<physical>
+			<mesh filename="$(find girona500_description)/resources/objects/net/sphere.obj" scale="0.1"/>
+			<origin rpy="0.0 0.0 0.0" xyz="10.0 0.0 5.0"/> 
+		</physical>
+		<visual>
+			<material name="Red"/>
+		</visual>
+	</static> -->
 	
 </scenario>

@@ -74,10 +74,21 @@
         <remap from="/translator/cola2_thruster_setpoints" to="/$(arg robot_name)/controller/thruster_setpoints"/>
     </node>
 
-    <!-- Run RVIZ -->
+    <!-- TFs -->
     <node name="world2ned" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 3.1415 world world_ned 100"/>
-    <node name="robot2camera" pkg="tf" type="static_transform_publisher" args="0.45 0.0 -0.1 1.2 0.0 1.571 girona500/base_link girona500/camera_front 100"/>
+    <node name="robot2camera" pkg="tf" type="static_transform_publisher" args="0.39 -0.06 0.11 1.57 0.0 1.57 girona500/base_link girona500/camera_front 100"/>
+    <node name="base_to_left_stereo" pkg="tf" type="static_transform_publisher" 
+      args="0.39 0.05 0.11 -1.57 0.0 -1.57 girona500/base_link girona500/xiroi/stereo_ch3/left_optical 100" />
+    <node name="base_to_right_stereo" pkg="tf" type="static_transform_publisher" 
+      args="0.39 -0.05 0.11 -1.57 0.0 -1.57 girona500/base_link girona500/xiroi/stereo_ch3/right_optical 100" />
+    
+    <!-- Run RVIZ -->
     <group if="$(arg enable_rviz)">
         <node pkg="rviz" type="rviz" name="rviz" args="-d $(find cola2_girona500)/scene/girona500.rviz"/>
     </group>
+
+    <!-- Node to publish GroundTruth -->
+    <node pkg="tf2_ros" type="static_transform_publisher" name="hole_gt_broadcaster" 
+      args="2.55 -3.6 2.47 0 0 0 world_ned hole_ground_truth" />
+
 </launch>

@@ -41,6 +41,7 @@
         <look name="aruco7" gray="1.0" roughness="0.8" texture="$(find girona500_description)/resources/cirtesu/aruco_4x4_1000-7.png"/>
         <look name="aruco8" gray="1.0" roughness="0.8" texture="$(find girona500_description)/resources/cirtesu/aruco_4x4_1000-8.png"/>
         <look name="black" gray="0.01" roughness="0.2" metalness="0.0"/>
+        <look name="poster" gray="1.0" roughness="0.8" texture="$(find cola2_stonefish)/data/girona500/rusty_paint.jpg"/>
     </looks>
     
 
@@ -125,4 +126,17 @@
         <world_transform rpy="0.0 0.0 3.1416" xyz="0.0 0.0 0.0" />
     </static>
 
+    <!-- Rusty Poster -->
+    <!-- <static name="Terrain" type="terrain">
+        <material name="Neutral"/>
+        <look name="poster"/>
+        <height_map filename="$(find cola2_stonefish)/data/girona500/rusty_paint.jpg"/> -->
+        <!-- <dimensions scalex="0.01" scaley="0.0085" height="0"/> -->
+        <!-- <dimensions scalex="0.004" scaley="0.01" height="0"/> -->
+        <!-- <dimensions scalex="0.0045" scaley="0.0035" height="0"/> -->
+        <!-- <world_transform rpy="0.0 1.571 -1.571" xyz="0.0 -3.7 3.0"/> 4.75 -->
+    <!-- </static> -->
+
 </scenario>
+
+<!-- Hole coordinates: 2.55 -3.6 2.47 -->

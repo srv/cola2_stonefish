@@ -623,15 +623,6 @@
 			<ros_publisher topic="/$(arg robot_name)/bravo/gripper/camera" />
 		</sensor> -->
 
-		<sensor
-			name="front_camera/camera" type="camera" rate="10.0">
-			<link name="Vehicle" />
-			<origin rpy="1.63
-			 0.0 1.57" xyz="0.35 -0.06 0.11" />
-			<specs resolution_x="1920" resolution_y="1080" horizontal_fov="82.0" />
-			<ros_publisher topic="/$(arg robot_name)/front_camera/camera" />
-		</sensor>
-
 		<sensor 
 			name="right_camera/camera" type="camera" rate="10.0">
 			<link name="Vehicle" />
@@ -647,27 +638,43 @@
 			<ros_publisher topic="/$(arg robot_name)/left_camera/camera" />
 		</sensor>
 
+		<!-- <sensor
+			name="front_camera/camera" type="camera" rate="10.0">
+			<link name="Vehicle" />
+			<origin rpy="1.63
+			 0.0 1.57" xyz="0.35 -0.06 0.11" />
+			 <origin rpy="1.57 0.0 1.57" xyz="0.39 0.00 0.11" />
+			<specs resolution_x="1920" resolution_y="1080" horizontal_fov="82.0" />
+			<ros_publisher topic="/$(arg robot_name)/front_camera/camera" />
+		</sensor> -->
+
 
 		<!-- ================================================== -->
 		<!-- THIS ARE THE STEREO CAMERA, IN CASE WE WANT TO USE THEM -->
 		<!-- ================================================== -->
 
-		<!-- <sensor name="xiroi/stereo_ch3/left_optical" type="camera" rate="5.0">
+		<sensor name="xiroi/stereo_ch3/left_optical" type="camera" rate="5.0">
 			<link name="Vehicle" />
-			<origin rpy="${pi/2} 0.0 0.0" xyz="0.0 0.0 0.15" />
-			<specs resolution_x="1280" resolution_y="720" horizontal_fov="39.87" /> -->
-			<!-- <specs resolution_x="2048" resolution_y="1536" horizontal_fov="39.87" /> -->
-			<!-- <ros_publisher topic="/$(arg robot_name)/xiroi/stereo_ch3/left_optical" />
-		</sensor> -->
-		<!-- 0.2 -0.048 0.76 -->
+
+			<!-- <origin rpy="1.63 0.0 1.57" xyz="0.35 0.05 0.11" /> -->
+			<origin rpy="1.57 0.0 1.57" xyz="0.39 0.05 0.11" />
+
+			<specs resolution_x="1280" resolution_y="720" horizontal_fov="82.0" />
+
+			<ros_publisher topic="/$(arg robot_name)/xiroi/stereo_ch3/left_optical" />
+		</sensor>
 
 
-		<!-- <sensor name="xiroi/stereo_ch3/right_optical" type="camera" rate="5.0">
+
+		<sensor name="xiroi/stereo_ch3/right_optical" type="camera" rate="5.0">
 			<link name="Vehicle" />
-			<origin rpy="${pi/2} 0.0 0.0" xyz="0.1 0.0 0.15" />
-			<specs resolution_x="1280" resolution_y="720" horizontal_fov="39.87" />
+
+			<!-- <origin rpy="1.63 0.0 1.57" xyz="0.35 -0.05 0.11" /> -->
+			<origin rpy="1.57 0.0 1.57" xyz="0.39 -0.05 0.11" />
+
+			<specs resolution_x="1280" resolution_y="720" horizontal_fov="82.0" />
 			<ros_publisher topic="/$(arg robot_name)/xiroi/stereo_ch3/right_optical" />
-		</sensor> -->
+		</sensor>
 
 		<!-- ================================================== -->
 		<!-- ================================================== -->
