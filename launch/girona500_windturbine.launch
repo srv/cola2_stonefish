@@ -78,9 +78,9 @@
     <node name="world2ned" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 3.1415 world world_ned 100"/>
     <node name="robot2camera" pkg="tf" type="static_transform_publisher" args="0.39 -0.06 0.11 1.57 0.0 1.57 girona500/base_link girona500/camera_front 100"/>
     <node name="base_to_left_stereo" pkg="tf" type="static_transform_publisher" 
-      args="0.39 0.05 0.11 -1.57 0.0 -1.57 girona500/base_link girona500/xiroi/stereo_ch3/left_optical 100" />
+      args="0.39 -0.05 0.11 1.57 0.0 1.57 girona500/base_link girona500/xiroi/stereo_ch3/left_optical 100" />
     <node name="base_to_right_stereo" pkg="tf" type="static_transform_publisher" 
-      args="0.39 -0.05 0.11 -1.57 0.0 -1.57 girona500/base_link girona500/xiroi/stereo_ch3/right_optical 100" />
+      args="0.39 0.05 0.11 1.57 0.0 1.57 girona500/base_link girona500/xiroi/stereo_ch3/right_optical 100" />
     
     <!-- Run RVIZ -->
     <group if="$(arg enable_rviz)">

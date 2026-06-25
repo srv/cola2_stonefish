@@ -41,15 +41,22 @@
 		</friction_table>
 	</materials>
 
-	<include file="$(find cola2_stonefish)/scenarios/environments/cirtesu_aruco.scn" />
-	
+	<!-- <include file="$(find cola2_stonefish)/scenarios/environments/cirtesu_aruco.scn" /> -->
 
-	<include file="$(find cola2_stonefish)/scenarios/objects/net.scn">
+	<!-- This scenario may be used for the vertical mosaicing -->
+	<!-- <include file="$(find cola2_stonefish)/scenarios/environments/cirtesu_poster.scn" /> -->
+	
+	<!-- This scenario is a perfect geometric net, this is problematic for some experiments -->
+	<!-- <include file="$(find cola2_stonefish)/scenarios/objects/net.scn">
 		<arg name="name" value="net" />
 		<arg name="xyz" value="-6.0 -3.6 0.0" />
 		<arg name="rpy" value="0.0 0.0 0.0" />
-	</include>
+	</include> -->
 
+	<!-- This is a photo of a net without holes, it will be less perfect than the other one, so stereo matching will be easier -->
+	<include file="$(find cola2_stonefish)/scenarios/environments/net_poster.scn" />
+
+	<!-- This is the robot with its components -->
 	<include file="$(find cola2_stonefish)/scenarios/robots/girona500_uji_bravo_real_cameras.scn">
 		<arg name="robot_name" value="girona500" />
 		<arg name="start_yaw" value="-1.57" />
@@ -58,6 +65,11 @@
 
 	<!-- <include file="$(find cola2_stonefish)/scenarios/objects/sphere.scn">
 		<arg name="xyz" value="2.55 -3.6 2.47" />
+		<arg name="rpy" value="0.0 0.0 0.0" />
+	</include> -->
+
+	<!-- <include file="$(find cola2_stonefish)/scenarios/objects/sphere.scn">
+		<arg name="xyz" value="0.5 -3.6 0.7" />
 		<arg name="rpy" value="0.0 0.0 0.0" />
 	</include> -->
 

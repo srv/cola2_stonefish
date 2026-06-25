@@ -19,7 +19,7 @@
 		<look name="girona500_black" gray="0.02" roughness="0.2" />
 		<look name="girona500_eca_black" gray="0.02" roughness="0.3" metalness="1.0" />
 		<look name="girona500_dvl" gray="1.0" roughness="0.2" metalness="1.0"
-			texture="$(find girona500_description)/resources/textures/dvl_tex.png" />
+			texture="$(find giroan500_description)/resources/textures/dvl_tex.png" />
 		<look name="girona500_eca" gray="0.01" roughness="0.3" metalness="0.2" />
 		<!-- <look name="rb7_black" gray="0.01" roughness="0.3" metalness="0.2" />
 		<look name="Yellow" rgb="1.0 0.9 0.0" roughness="0.3"/> -->
@@ -657,7 +657,7 @@
 			<link name="Vehicle" />
 
 			<!-- <origin rpy="1.63 0.0 1.57" xyz="0.35 0.05 0.11" /> -->
-			<origin rpy="1.57 0.0 1.57" xyz="0.39 0.05 0.11" />
+			<origin rpy="1.57 0.0 1.57" xyz="0.39 -0.05 0.11" />
 
 			<specs resolution_x="1280" resolution_y="720" horizontal_fov="82.0" />
 
@@ -670,7 +670,7 @@
 			<link name="Vehicle" />
 
 			<!-- <origin rpy="1.63 0.0 1.57" xyz="0.35 -0.05 0.11" /> -->
-			<origin rpy="1.57 0.0 1.57" xyz="0.39 -0.05 0.11" />
+			<origin rpy="1.57 0.0 1.57" xyz="0.39 0.05 0.11" />
 
 			<specs resolution_x="1280" resolution_y="720" horizontal_fov="82.0" />
 			<ros_publisher topic="/$(arg robot_name)/xiroi/stereo_ch3/right_optical" />
