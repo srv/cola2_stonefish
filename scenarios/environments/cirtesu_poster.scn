@@ -21,7 +21,7 @@
 		<dimensions xyz="3.5 7.5 0.05"/>
 		<material name="Netural"/>
 		<look name="poster" uv_mode="1"/>
-		<world_transform rpy="0.0 1.5708 1.578" xyz="4.0 -3.6 2.5"/> <!-- 0.0 0.0 1.578                1.0 0.0 4.8 --> -6.0 -3.6 0.0
+		<world_transform rpy="0.0 1.5708 1.578" xyz="0.0 -3.6 2.5"/> <!-- 0.0 0.0 1.578                1.0 0.0 4.8 --> -6.0 -3.6 0.0
    </static>
 
     <static name="Tank" type="model">
